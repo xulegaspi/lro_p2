@@ -45,12 +45,23 @@ public class p2 extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        switch (type) {
+        int typeInt = 0;
+        if(type.equals("movies")) {
+            typeInt = 1;
+        } else {
+            if(type.equals("programs")) {
+                typeInt = 2;
+            }
+        }
 
-            case "movies":
+        int pageInt = Integer.parseInt(page);
 
-                switch(page) {
-                    case "1":
+        switch (typeInt) {
+
+            case 1:
+
+                switch(pageInt) {
+                    case 1:
                         out.println("<html><head><title>Servicio de TV - Practica 2</title></head>");
                         out.println("<body>");
                         out.println("<h1>Servicio de TV - Practica 2</h1>");
@@ -66,7 +77,7 @@ public class p2 extends HttpServlet {
                         out.println("</body>");
                         out.println("</html>");
                         break;
-                    case "2":
+                    case 2:
                         out.println("<html><head><title>Servicio de TV - Practica 2</title></head>");
                         out.println("<body>");
                         out.println("<h1>Servicio de TV - Practica 2</h1>");
@@ -83,7 +94,7 @@ public class p2 extends HttpServlet {
                         out.println("</body>");
                         out.println("</html>");
                         break;
-                    case "3":
+                    case 3:
                         out.println("<html><head><title>Servicio de TV - Practica 2</title></head>");
                         out.println("<body>");
                         out.println("<h1>Servicio de TV - Practica 2</h1>");
@@ -105,10 +116,10 @@ public class p2 extends HttpServlet {
                 break;
 
 
-            case "programs":
+            case 2:
 
-                switch(page) {
-                    case "1":
+                switch(pageInt) {
+                    case 1:
                         out.println("<html><head><title>Servicio de TV - Practica 2</title></head>");
                         out.println("<body>");
                         out.println("<h1>Servicio de TV - Practica 2</h1>");
@@ -124,7 +135,7 @@ public class p2 extends HttpServlet {
                         out.println("</body>");
                         out.println("</html>");
                         break;
-                    case "2":
+                    case 2:
                         out.println("<html><head><title>Servicio de TV - Practica 2</title></head>");
                         out.println("<body>");
                         out.println("<h1>Servicio de TV - Practica 2</h1>");
@@ -141,7 +152,7 @@ public class p2 extends HttpServlet {
                         out.println("</body>");
                         out.println("</html>");
                         break;
-                    case "3":
+                    case 3:
                         out.println("<html><head><title>Servicio de TV - Practica 2</title></head>");
                         out.println("<body>");
                         out.println("<h1>Servicio de TV - Practica 2</h1>");
@@ -158,7 +169,7 @@ public class p2 extends HttpServlet {
                         out.println("</body>");
                         out.println("</html>");
                         break;
-                    case "4":
+                    case 4:
                         out.println("<html><head><title>Servicio de TV - Practica 2</title></head>");
                         out.println("<body>");
                         out.println("<h1>Servicio de TV - Practica 2</h1>");
