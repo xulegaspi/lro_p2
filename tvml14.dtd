@@ -1,0 +1,28 @@
+<!--<?xml version="1.0"?>-->
+<!--<!DOCTYPE Programacion [-->
+
+    <!ELEMENT Programacion (Fecha, Canal+)>
+    <!ELEMENT Fecha (#PCDATA)>
+    <!ELEMENT Canal (NombreCanal, Formato?, Programa+)>
+        <!ATTLIST Canal lang (es|en|fr|de|it) #REQUIRED>
+        <!ATTLIST Canal teletexto (si|no) "no">
+
+    <!ELEMENT NombreCanal (#PCDATA)>
+    <!ELEMENT Formato (#PCDATA)>
+    <!ELEMENT Programa (#PCDATA|NombrePrograma|Categoria|Intervalo)*>
+        <!ATTLIST Programa edadminima CDATA #REQUIRED>
+        <!ATTLIST Programa langs CDATA #IMPLIED>
+
+    <!ELEMENT NombrePrograma (#PCDATA)>
+    <!ELEMENT Categoria (#PCDATA)>
+    <!ELEMENT Intervalo (HoraInicio, (Duracion|HoraFin), OtraEmision?)>
+    <!ELEMENT HoraInicio (#PCDATA)>
+    <!ELEMENT HoraFin (#PCDATA)>
+    <!ELEMENT Duracion (#PCDATA)>
+    <!ELEMENT OtraEmision (Fecha, UrlTVML)>
+    <!ELEMENT UrlTVML (#PCDATA)>
+
+<!--]>-->
+
+
+
