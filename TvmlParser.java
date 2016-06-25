@@ -21,19 +21,22 @@ public class TvmlParser {
     private static ArrayList<ChannelDay> channelsFilms;
     private static ArrayList<ChannelLangs> channelsProgs;
 
-    private static String initialUrl = "src/tvml14-20-06.xml";
+    private static String initialUrl = "http://clave.det.uvigo.es:8080/~lroprof/13-14/tvml14-20-06.xml";
+//    private static String initialUrl = "src/tvml14-20-06.xml";
 //    private static String initialUrl = "src/tvml-ok.xml";
+
+    private static String errors = null;
 
     public TvmlParser() {
 
     }
 
-    public String Read() {
+//    public String Read() {
+//
+//        return null;
+//    }
 
-        return null;
-    }
-
-    public static void main (String[] args) {
+    public void read () {
 
         docArray = new ArrayList<Document>();
         daysList = new ArrayList<String>();
@@ -188,16 +191,23 @@ public class TvmlParser {
         }
     }
 
+    public String getErrors() {
+        return errors;
+    }
+
     public static class XML_DTD_ErrorHandler extends DefaultHandler {
         public XML_DTD_ErrorHandler () {}
         public void warning(SAXParseException spe) {
             System.out.println("Warning: "+spe.toString());
+            errors = errors + "<br>" + "Warning: " + spe.toString();
         }
         public void error(SAXParseException spe) {
             System.out.println("Error: "+spe.toString());
+            errors = errors + "<br>" + "Error: " + spe.toString();
         }
         public void fatalerror(SAXParseException spe) {
             System.out.println("Fatal Error: "+spe.toString());
+            errors = errors + "<br>" + "Fatal Error: " + spe.toString();
         }
     }
 
