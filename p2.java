@@ -96,9 +96,10 @@ public class p2 extends HttpServlet {
                         }
 
                         out.println("<p><input type='submit' value='Enviar'>");
-//                        out.println("<input type='submit' value='Inicio' onClick='document.forms[0].method=\"GET\"'>");
-                        out.println(Util.homeButton);
                         out.println("</form>");
+
+                        out.println(Util.homeButton);
+
                         out.println("</body>");
                         out.println("</html>");
                         break;
@@ -128,10 +129,11 @@ public class p2 extends HttpServlet {
                         }
 
                         out.println("<p><input type='submit' value='Enviar'>");
-                        out.println(Util.backButton);
-//                        out.println("<input type='submit' value='Inicio' onClick='document.forms[0].method=\"GET\"'>");
-                        out.println(Util.homeButton);
                         out.println("</form>");
+
+                        out.println(Util.backButton);
+                        out.println(Util.homeButton);
+
                         out.println("</body>");
                         out.println("</html>");
                         break;
@@ -159,10 +161,10 @@ public class p2 extends HttpServlet {
                             out.println("</ul>");
                         }
 
+
                         out.println(Util.backButton);
-//                        out.println("<input type='submit' value='Inicio' onClick='document.forms[0].method=\"GET\"'>");
                         out.println(Util.homeButton);
-                        out.println("</form>");
+
                         out.println("</body>");
                         out.println("</html>");
                         break;
@@ -200,9 +202,10 @@ public class p2 extends HttpServlet {
                         }
 
                         out.println("<p><input type='submit' value='Enviar'>");
-//                        out.println("<input type='submit' value='Inicio' onClick='document.forms[0].method=\"GET\"'>");
-                        out.println(Util.homeButton);
                         out.println("</form>");
+
+                        out.println(Util.homeButton);
+
                         out.println("</body>");
                         out.println("</html>");
                         break;
@@ -233,10 +236,11 @@ public class p2 extends HttpServlet {
 
 
                         out.println("<p><input type='submit' value='Enviar'>");
-                        out.println(Util.backButton);
-//                        out.println("<input type='submit' value='Inicio' onClick='document.forms[0].method=\"GET\"'>");
-                        out.println(Util.homeButton);
                         out.println("</form>");
+
+                        out.println(Util.backButton);
+                        out.println(Util.homeButton);
+
                         out.println("</body>");
                         out.println("</html>");
                         break;
@@ -267,10 +271,11 @@ public class p2 extends HttpServlet {
                         }
 
                         out.println("<p><input type='submit' value='Enviar'>");
-                        out.println(Util.backButton);
-//                        out.println("<input type='submit' value='Inicio' onClick='document.forms[0].method=\"GET\"'>");
-                        out.println(Util.homeButton);
                         out.println("</form>");
+
+                        out.println(Util.backButton);
+                        out.println(Util.homeButton);
+
                         out.println("</body>");
                         out.println("</html>");
                         break;
@@ -301,9 +306,8 @@ public class p2 extends HttpServlet {
                         }
 
                         out.println(Util.backButton);
-//                        out.println("<input type='submit' value='Inicio' onClick='document.forms[0].method=\"GET\"'>");
                         out.println(Util.homeButton);
-                        out.println("</form>");
+
                         out.println("</body>");
                         out.println("</html>");
                         break;
