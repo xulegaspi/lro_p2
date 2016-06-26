@@ -12,7 +12,7 @@ import java.util.ListIterator;
 /**
  * Created by Xurxo on 17/06/2016.
  */
-public class TvmlParser {
+public class TvmlParser2 {
 
     private static ArrayList<Document> docArray;
     private static ArrayList<String> daysList;
@@ -25,18 +25,60 @@ public class TvmlParser {
 //    private static String initialUrl = "src/tvml14-20-06.xml";
 //    private static String initialUrl = "src/tvml-ok.xml";
 
-    private static String errors = null;
+    private static String errors;
 
-    public TvmlParser() {
+    public TvmlParser2() {
 
     }
 
-//    public String Read() {
-//
-//        return null;
-//    }
+    public static void main (String args[]) {
+        read();
 
-    public static void main () {
+        daysList.forEach(System.out::println);
+        urlsList.forEach(System.out::println);
+
+        System.out.println("==================");
+        System.out.println(errors);
+        System.out.println("==================");
+
+        for(String lang : langsList) {
+            System.out.println(lang);
+            for(String day : daysList) {
+                System.out.println(" - " + day);
+                ArrayList<String> bChannel = getChannelsForProg(day, lang);
+                for(String c : bChannel) {
+                    System.out.println("  - - " + c);
+                    ArrayList<Programas> aProgramas = getProgramas(lang, day, c);
+                    for(Programas p : aProgramas) {
+                        System.out.println("  - - - " + p.getTitle());
+                    }
+                }
+            }
+
+            System.out.println();
+        }
+
+        System.out.println("==================");
+        System.out.println("==================");
+
+        for(String day : daysList) {
+            System.out.println(day);
+            ArrayList<String> aChannel = getChannels(day);
+            ListIterator<String> it = aChannel.listIterator();
+            while (it.hasNext()) {
+                String sChannel = it.next();
+                System.out.println(sChannel);
+                ArrayList<Movies> aFilms = getMovies(day, sChannel);
+                for(Movies m : aFilms) {
+                    System.out.println("   - " + m.getTitle());
+                }
+            }
+            System.out.println();
+        }
+
+    }
+
+    public static void read () {
 
         docArray = new ArrayList<Document>();
         daysList = new ArrayList<String>();
@@ -78,7 +120,6 @@ public class TvmlParser {
                         String nextUrl = el.getElementsByTagName("UrlTVML").item(ii).getTextContent();
 //                        System.out.println(nextUrl);
                         if(!urlsList.contains(nextUrl)) {
-                            urlsList.add(nextUrl);
                             try {
                                 doc = db.parse(nextUrl);
                                 docArray.add(doc);
@@ -119,11 +160,11 @@ public class TvmlParser {
 
                         }
 
-                        // Checking if there are films
-                        if(prog.getElementsByTagName("Categoria").item(0).getTextContent().equals("Cine")) {
-                            System.out.println("CINE -> " + prog.getElementsByTagName("NombrePrograma").item(0).getTextContent());
-
-                        }
+//                        // Checking if there are films
+//                        if(prog.getElementsByTagName("Categoria").item(0).getTextContent().equals("Cine")) {
+////                            System.out.println("CINE -> " + prog.getElementsByTagName("NombrePrograma").item(0).getTextContent());
+//
+//                        }
 
 
                     }

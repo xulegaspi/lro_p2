@@ -20,7 +20,7 @@ public class p2 extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
-        tvmlParser.read();
+//        tvmlParser.read();
         String errors = tvmlParser.getErrors();
 
         response.setContentType("text/html");
@@ -177,7 +177,20 @@ public class p2 extends HttpServlet {
                         out.println("<h3>Selecciona idioma:</h3>");
                         out.println("<form method='POST' action='?page=2'>");
 
-
+                        ArrayList<String> aLangs = TvmlParser.getLangs();
+                        Iterator<String> it =  aLangs.listIterator();
+                        boolean first = true;
+                        while(it.hasNext()) {
+                            String lang = it.next();
+                            if(first) {
+                                out.println("<input type='radio' name='lang' value='" + lang + "' checked>" + lang);
+                                out.println("<br>");
+                                first = false;
+                            } else {
+                                out.println("<input type='radio' name='lang' value='" + lang + "'>" + lang);
+                                out.println("<br>");
+                            }
+                        }
 
                         out.println("<p><input type='submit' value='Enviar'>");
                         out.println("<input type='submit' value='Inicio' onClick='document.forms[0].method=\"GET\"'>");
@@ -186,13 +199,29 @@ public class p2 extends HttpServlet {
                         out.println("</html>");
                         break;
                     case 2:
+                        String lang = request.getParameter("lang");
                         out.println("<html><head><title>Servicio de TV - Practica 2</title></head>");
                         out.println("<body>");
                         out.println("<h1>Servicio de TV - Practica 2</h1>");
                         out.println("<h2>Programas</h2>");
                         out.println("<h3>Selecciona fecha:</h3>");
                         out.println("<form method='POST' action='?page=3'>");
+                        out.println("<input type='hidden' name='lang' value='" + lang + "'>");
 
+                        ArrayList<String> aDays = TvmlParser.getSchedule();
+                        it =  aDays.listIterator();
+                        first = true;
+                        while(it.hasNext()) {
+                            String day2 = it.next();
+                            if(first) {
+                                out.println("<input type='radio' name='day' value='" + day2 + "' checked>" + day2);
+                                out.println("<br>");
+                                first = false;
+                            } else {
+                                out.println("<input type='radio' name='day' value='" + day2 + "'>" + day2);
+                                out.println("<br>");
+                            }
+                        }
 
 
                         out.println("<p><input type='submit' value='Enviar'>");
@@ -203,6 +232,9 @@ public class p2 extends HttpServlet {
                         out.println("</html>");
                         break;
                     case 3:
+                        String day = request.getParameter("day");
+                        String lang2 = request.getParameter("lang");
+
                         out.println("<html><head><title>Servicio de TV - Practica 2</title></head>");
                         out.println("<body>");
                         out.println("<h1>Servicio de TV - Practica 2</h1>");
@@ -210,7 +242,20 @@ public class p2 extends HttpServlet {
                         out.println("<h3>Selecciona canal:</h3>");
                         out.println("<form method='POST' action='?page=4'>");
 
-
+                        ArrayList<String> aChannel = TvmlParser.getChannelsForProg(day, lang2);
+                        it =  aChannel.listIterator();
+                        first = true;
+                        while(it.hasNext()) {
+                            String sChannel = it.next();
+                            if(first) {
+                                out.println("<input type='radio' name='channel' value='" + sChannel + "' checked>" + sChannel);
+                                out.println("<br>");
+                                first = false;
+                            } else {
+                                out.println("<input type='radio' name='channel' value='" + sChannel + "'>" + sChannel);
+                                out.println("<br>");
+                            }
+                        }
 
                         out.println("<p><input type='submit' value='Enviar'>");
                         out.println(Util.backButton);
@@ -220,11 +265,30 @@ public class p2 extends HttpServlet {
                         out.println("</html>");
                         break;
                     case 4:
+                        String day3 = request.getParameter("day");
+                        String lang3 = request.getParameter("lang");
+                        String chan3 = request.getParameter("channel");
+
                         out.println("<html><head><title>Servicio de TV - Practica 2</title></head>");
                         out.println("<body>");
                         out.println("<h1>Servicio de TV - Practica 2</h1>");
                         out.println("<h2>Programas</h2>");
                         out.println("<h3>Resultado de su consulta:</h3>");
+
+                        ArrayList<Programas> aProgramas = TvmlParser.getProgramas(lang3, day3, chan3);
+                        Iterator<Programas> it2 =  aProgramas.listIterator();
+                        while(it2.hasNext()) {
+                            Programas mPrograma = it2.next();
+                            out.println("<ul>");
+                            out.println(mPrograma.getTitle());
+                            out.println("<ul>");
+                            out.println("Horario: " + mPrograma.getSchedule());
+                            out.println("</ul>");
+                            out.println("<ul>");
+                            out.println("Synopsis: " + mPrograma.getMinAge());
+                            out.println("</ul>");
+                            out.println("</ul>");
+                        }
 
                         out.println(Util.backButton);
                         out.println("<input type='submit' value='Inicio' onClick='document.forms[0].method=\"GET\"'>");

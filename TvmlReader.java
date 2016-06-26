@@ -22,6 +22,10 @@ public class TvmlReader {
 
     void TvmlReader(){}
 
+    public static void main (String args[]) {
+
+    }
+
     private void addLang(String langs){
         String[] langl = langs.split("\\ ");
         for(int ii=0; ii<langl.length; ii++){
