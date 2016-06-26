@@ -36,7 +36,7 @@ public class TvmlParser {
 //        return null;
 //    }
 
-    public static void main () {
+    public void read () {
 
         docArray = new ArrayList<Document>();
         daysList = new ArrayList<String>();

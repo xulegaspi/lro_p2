@@ -20,7 +20,7 @@ public class p2 extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
-//        tvmlParser.read();
+        tvmlParser.read();
         String errors = tvmlParser.getErrors();
 
         response.setContentType("text/html");
