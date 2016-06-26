@@ -57,10 +57,10 @@ public class p2 extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         int typeInt = 0;
-        if(type.equals("movies")) {
+        if(sType.equals("movies")) {
             typeInt = 1;
         } else {
-            if(type.equals("programs")) {
+            if(sType.equals("programs")) {
                 typeInt = 2;
             }
         }
