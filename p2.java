@@ -123,7 +123,7 @@ public class p2 extends HttpServlet {
                         }
 
                         out.println("<p><input type='submit' value='Enviar'>");
-                        out.println(Util.backButton);
+//                        out.println(Util.backButton);
                         out.println("<input type='submit' value='Inicio' onClick='document.forms[0].method=\"GET\"'>");
                         out.println("</form>");
                         out.println("</body>");
@@ -153,7 +153,7 @@ public class p2 extends HttpServlet {
                             out.println("</ul>");
                         }
 
-                        out.println(Util.backButton);
+//                        out.println(Util.backButton);
                         out.println("<input type='submit' value='Inicio' onClick='document.forms[0].method=\"GET\"'>");
                         out.println("</form>");
                         out.println("</body>");
@@ -225,7 +225,7 @@ public class p2 extends HttpServlet {
 
 
                         out.println("<p><input type='submit' value='Enviar'>");
-                        out.println(Util.backButton);
+//                        out.println(Util.backButton);
                         out.println("<input type='submit' value='Inicio' onClick='document.forms[0].method=\"GET\"'>");
                         out.println("</form>");
                         out.println("</body>");
@@ -258,7 +258,7 @@ public class p2 extends HttpServlet {
                         }
 
                         out.println("<p><input type='submit' value='Enviar'>");
-                        out.println(Util.backButton);
+//                        out.println(Util.backButton);
                         out.println("<input type='submit' value='Inicio' onClick='document.forms[0].method=\"GET\"'>");
                         out.println("</form>");
                         out.println("</body>");
@@ -290,7 +290,7 @@ public class p2 extends HttpServlet {
                             out.println("</ul>");
                         }
 
-                        out.println(Util.backButton);
+//                        out.println(Util.backButton);
                         out.println("<input type='submit' value='Inicio' onClick='document.forms[0].method=\"GET\"'>");
                         out.println("</form>");
                         out.println("</body>");
