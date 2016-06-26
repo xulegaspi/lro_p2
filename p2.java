@@ -76,7 +76,7 @@ public class p2 extends HttpServlet {
                         out.println("<h3>Selecciona fecha:</h3>");
                         out.println("<form method='POST' action='?page=2'>");
 
-                        ArrayList<String> aDays = TvmlParser.getSchedule();
+                        ArrayList<String> aDays = tvmlParser.getSchedule();
                         Iterator<String> it =  aDays.listIterator();
                         boolean first = true;
                         while(it.hasNext()) {
@@ -107,7 +107,7 @@ public class p2 extends HttpServlet {
                         out.println("<h3>Selecciona canal:</h3>");
                         out.println("<form method='POST' action='?page=3'>");
 
-                        ArrayList<String> aChannel = TvmlParser.getChannels(day);
+                        ArrayList<String> aChannel = tvmlParser.getChannels(day);
                         it =  aChannel.listIterator();
                         first = true;
                         while(it.hasNext()) {
@@ -138,7 +138,7 @@ public class p2 extends HttpServlet {
                         out.println("<h2>Peliculas</h2>");
                         out.println("<h3>Resultado de su consulta:</h3>");
 
-                        ArrayList<Movies> aFilms = TvmlParser.getMovies(ssday, sschannel);
+                        ArrayList<Movies> aFilms = tvmlParser.getMovies(ssday, sschannel);
                         Iterator<Movies> it2 =  aFilms.listIterator();
                         while(it2.hasNext()) {
                             Movies mFilm = it2.next();
@@ -177,7 +177,7 @@ public class p2 extends HttpServlet {
                         out.println("<h3>Selecciona idioma:</h3>");
                         out.println("<form method='POST' action='?page=2'>");
 
-                        ArrayList<String> aLangs = TvmlParser.getLangs();
+                        ArrayList<String> aLangs = tvmlParser.getLangs();
                         Iterator<String> it =  aLangs.listIterator();
                         boolean first = true;
                         while(it.hasNext()) {
@@ -208,7 +208,7 @@ public class p2 extends HttpServlet {
                         out.println("<form method='POST' action='?page=3'>");
                         out.println("<input type='hidden' name='lang' value='" + lang + "'>");
 
-                        ArrayList<String> aDays = TvmlParser.getSchedule();
+                        ArrayList<String> aDays = tvmlParser.getSchedule();
                         it =  aDays.listIterator();
                         first = true;
                         while(it.hasNext()) {
@@ -242,7 +242,7 @@ public class p2 extends HttpServlet {
                         out.println("<h3>Selecciona canal:</h3>");
                         out.println("<form method='POST' action='?page=4'>");
 
-                        ArrayList<String> aChannel = TvmlParser.getChannelsForProg(day, lang2);
+                        ArrayList<String> aChannel = tvmlParser.getChannelsForProg(day, lang2);
                         it =  aChannel.listIterator();
                         first = true;
                         while(it.hasNext()) {
@@ -275,7 +275,7 @@ public class p2 extends HttpServlet {
                         out.println("<h2>Programas</h2>");
                         out.println("<h3>Resultado de su consulta:</h3>");
 
-                        ArrayList<Programas> aProgramas = TvmlParser.getProgramas(lang3, day3, chan3);
+                        ArrayList<Programas> aProgramas = tvmlParser.getProgramas(lang3, day3, chan3);
                         Iterator<Programas> it2 =  aProgramas.listIterator();
                         while(it2.hasNext()) {
                             Programas mPrograma = it2.next();
