@@ -17,6 +17,7 @@ public class p2 extends HttpServlet {
     private String ssday;
     private String sschannel;
     private String sslang;
+    private String sType;
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
@@ -48,6 +49,9 @@ public class p2 extends HttpServlet {
 
         String page = request.getParameter("page");
         String type = request.getParameter("type");
+        if(type != null) {
+            sType = type;
+        }
 
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
