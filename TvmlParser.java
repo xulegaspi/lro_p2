@@ -38,6 +38,8 @@ public class TvmlParser {
 
     public void read () {
 
+        errors = null;
+
         docArray = new ArrayList<Document>();
         daysList = new ArrayList<String>();
         urlsList = new ArrayList<String>();

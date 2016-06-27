@@ -110,6 +110,7 @@ public class p2 extends HttpServlet {
                         out.println("<body>");
                         out.println("<h1>Servicio de TV - Practica 2</h1>");
                         out.println("<h2>Peliculas</h2>");
+                        out.println("<h4>Dia seleccionado: " + day);
                         out.println("<h3>Selecciona canal:</h3>");
                         out.println("<form method='POST' action='?page=3'>");
 
@@ -144,6 +145,8 @@ public class p2 extends HttpServlet {
                         out.println("<body>");
                         out.println("<h1>Servicio de TV - Practica 2</h1>");
                         out.println("<h2>Peliculas</h2>");
+                        out.println("<h4>Dia seleccionado: " + ssday);
+                        out.println("<h4>Canal seleccionado: " + sschannel);
                         out.println("<h3>Resultado de su consulta:</h3>");
 
                         ArrayList<Movies> aFilms = tvmlParser.getMovies(ssday, sschannel);
@@ -215,6 +218,7 @@ public class p2 extends HttpServlet {
                         out.println("<body>");
                         out.println("<h1>Servicio de TV - Practica 2</h1>");
                         out.println("<h2>Programas</h2>");
+                        out.println("<h4>Idioma seleccionado: " + lang);
                         out.println("<h3>Selecciona fecha:</h3>");
                         out.println("<form method='POST' action='?page=3'>");
                         out.println("<input type='hidden' name='lang' value='" + lang + "'>");
@@ -252,6 +256,8 @@ public class p2 extends HttpServlet {
                         out.println("<body>");
                         out.println("<h1>Servicio de TV - Practica 2</h1>");
                         out.println("<h2>Programas</h2>");
+                        out.println("<h4>Idioma seleccionado: " + lang2);
+                        out.println("<h4>Dia seleccionado: " + day);
                         out.println("<h3>Selecciona canal:</h3>");
                         out.println("<form method='POST' action='?page=4'>");
 
@@ -288,6 +294,9 @@ public class p2 extends HttpServlet {
                         out.println("<body>");
                         out.println("<h1>Servicio de TV - Practica 2</h1>");
                         out.println("<h2>Programas</h2>");
+                        out.println("<h4>Idioma seleccionado: " + lang3);
+                        out.println("<h4>Dia seleccionado: " + day3);
+                        out.println("<h4>Canal seleccionado: " + chan3);
                         out.println("<h3>Resultado de su consulta:</h3>");
 
                         ArrayList<Programas> aProgramas = tvmlParser.getProgramas(lang3, day3, chan3);
